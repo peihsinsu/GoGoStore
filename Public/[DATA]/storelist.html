@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+<!--
+body {
+background-image: url(bg.png);
+margin-left: 0px;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+}
+-->
+</style>
+<script type="text/javascript" src="jquery-1.7.min.js"></script>
+<script type="text/javascript" src="base.js"></script>
+</head>
+<script>
+$(function(){
+	//alert('TEST...' + $('#pic').attr('src'));
+	$('#remove').html("loading from..."+ getResourcePath('%5BDATA%5D','storelist.json'));
+	$.getJSON(getResourcePath('%5BDATA%5D','storelist.json'), function(data) {
+		$.each(data,function(index){
+			var star = "";
+			for(var i = 0; i < this.rate ; i++){
+				star = star + '<img src="star.png">';
+			}
+			//alert(star);
+			$('#list').append(
+			//alert(
+				'<tr>' + //'<td>' + this.storeId + '</td>' + 
+					'<td width="100"><img id="' + this.storeId + '" src="' + baseUrl +'/'+ this.storeId +'/'+ this.icon + '"/></td>' +
+					'<td style="vertical-align:top;text-align:left">' +
+						'<a href="' + this.blog + '"><img width="50" src="iconblog.png"></a>' +
+						'<a href="mailto://' + this.mail + '"><img width="50" src="iconmail.png"></a>' +
+						'<a href="tel://' + this.tel + '"><img width="50" src="iconphone.png"></a><br/><br/>' +
+						star +
+					'<td>' + 
+				'</tr>' +
+				'<tr><td colspan="2"><font style="font-size:12pt;font-weight:bold">' + 
+					this.storeName + '</font><br/>' +
+					this.shortDesc + '<br/>' +'</td></tr>'
+			);
+			
+			$('#' + this.storeId).click(function(){
+				wave(this.id);
+			});
+		});
+		$('#remove').hide();
+	});
+	
+});
+	
+function wave(id){
+	//alert('Goto:' + id);
+	window.gogo.clickOnAndroid(id);
+}
+
+</script>
+<body>
+<img src="listbar.png">
+<table id="list" width="100%" align="center" style="background-color: white">
+<tr id="remove" style="vertical-align: top;">
+	<td>
+		loading...
+	</td>
+</tr>
+</table>
+<table id="list" width="100%" align="center">
+<tr>
+	<td colspan="2" style="text-align:center">
+		<input type="button" value="前往開發者BLOG" onclick="document.location='http://peihsinsu.blogspot.com/'">		
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

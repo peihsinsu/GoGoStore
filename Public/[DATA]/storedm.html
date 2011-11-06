@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+<!--
+body {
+background-image: url(bg.png);
+margin-left: 0px;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+}
+-->
+</style>
+<script type="text/javascript" src="jquery-1.7.min.js"></script>
+<script type="text/javascript" src="base.js"></script>
+</head>
+<script>
+$(function(){
+	//alert('TEST...' + $('#pic').attr('src'));
+	//alert('find:' + gup('id'));
+	var storeId = gup('id');
+	$.getJSON(getResourcePath(storeId,'store.json'), function(data) {
+		$('#storeName').html(data.storeName);
+		$('#pic').attr('src',getResourcePath(storeId, data.titlePic));
+		$('#introMsg').html(data.introMsg);
+		$('#onSale').html(data.onSale);
+		$('#tel').html('<a href="tel://' + data.tel + '">' + data.tel + '</a>');
+		$('#blog').html('<a href="' + data.blog + '">' + data.storeName + '</a>');
+		
+	});
+	
+});
+
+
+function gup( name ){
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+</script>
+<body background="transparent">
+<table width="100%" align="center">
+<tr>
+	<td width="100%" align="center" valign="bottom">
+		<font id="storeName" style="font-size: 20px;font-weight: bold;">載入中...</font>
+	</td>
+</tr>
+<tr>
+	<td>
+		<img width="100%" id="pic"/>
+		<div id="introMsg"></div>
+		<br/>
+		<img src="itemonsale.png"/>
+		<table border="1" width="100%" style="border: thin;">
+			<tr>
+				<td id="onSale">資料載入中....</td>
+			</tr>
+		</table>
+		<br/>
+		<table>
+			<tr>
+				<td colspan="2"><b>店家詳細連絡資訊：</b></td>
+			</tr>
+			<tr>
+				<td>電話：</td><td><div id="tel"></div></td>
+			</tr>
+			<tr>
+				<td>部落格：</td><td><div id="blog"></div></td>
+			</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" style="text-align:center">
+		<input type="button" value="前往開發者BLOG" onclick="document.location='http://peihsinsu.blogspot.com/'">		
+	</td>
+</tr>
+</table>
+
+</body>
+</html>
