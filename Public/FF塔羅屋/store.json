@@ -1,6 +1,6 @@
 ﻿{"storeName":"【台中 逢甲商圈】FF塔羅屋",
 
-	"titlePic":"pic001.png",
+	"titlePic":["pic001.png","pic002.png","pic003.png"],
 
 	"introMsg":"藏在逢甲商圈的碧根商場2樓的這家塔羅屋，最近改名叫'Fumimi塔羅屋-Fumimi TAROT'",
 
