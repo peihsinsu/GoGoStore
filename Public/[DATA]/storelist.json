@@ -1,0 +1,49 @@
+﻿[{"storeId":"瑪蒂塔羅屋","storeName":"【台中 一中街商圈】瑪蒂塔羅屋",
+
+	"icon":"logo.jpg",
+
+	"shortDesc":"藏在一中商圈的一中二街商場四樓的這家塔羅屋，最近改名叫'史蒂芬塔羅屋-STEPHEN TAROT'算的非常準 常也在電視看的到那有名大師史蒂芬開的店",
+
+	"blog":"http://www.wretch.cc/blog/news5169925",
+
+	"mail":"simonsu.mail@gmail.com",
+
+	"tel":"0982359416",
+
+	"rate":5,
+
+	"jsonpath":"/talopuk/store.json"},
+
+ 
+{"storeId":"FF塔羅屋","storeName":"【台中 逢甲商圈】FF塔羅屋",
+
+	"icon":"logo.jpg",
+
+	"shortDesc":"藏在逢甲商圈的碧根商場2樓的這家塔羅屋，最近改名叫'Fumimi塔羅屋-Fumimi TAROT",
+
+	"blog":"http://www.wretch.cc/blog/news5169925",
+
+	"mail":"fumirody@hotmail.com",
+
+	"tel":"0961329728",
+
+	"rate":3,
+
+	"jsonpath":"/talopuk/store.json"},
+
+
+{"storeId":"LONA衣飾","storeName":"【台中 一中街商圈】LONA衣飾",
+
+	"icon":"logo.jpg",
+
+	"shortDesc":"今天來到的這家LONA位於二樓，賣衣服跟其他相關飾品讓我踏入的第一眼是它掛在牆上的展示衣物，再來就是可愛活潑的老闆！",
+
+	"blog":"http://paper.ictstore.com.tw/paper.php?paper_sn=281",
+
+	"mail":"rika0329@hotmail.com",
+
+	"tel":"0987660199",
+
+	"rate":4,
+
+	"jsonpath":"/talopuk/store.json"}]
